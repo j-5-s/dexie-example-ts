@@ -1,19 +1,11 @@
 import Dexie, { Entity } from "dexie";
 import dexieCloud, { type DexieCloudTable } from 'dexie-cloud-addon';
-
 interface IContact {
   id?: string;
   realmId: string;
   first: string;
   last: string;
 }
-
-// class Contact extends Entity<MyAppDatabase> {
-//   id!: string;
-//   first!: string;
-//   last!: string;
-// } 
-
 class MyAppDatabase extends Dexie {
   // Declare implicit table properties.
   // (just to inform Typescript. Instantiated by Dexie in stores() method)
@@ -43,4 +35,4 @@ class MyAppDatabase extends Dexie {
 
 const db = new MyAppDatabase();
 // this throws "unsafe member access .add on an any value"
-db.contacts.add({ first: "Foo", last: "Bar" } as IContact);
+db.contacts.add({ first: "Foo", last: "Bar" });
