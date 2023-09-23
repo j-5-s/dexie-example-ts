@@ -42,5 +42,5 @@ class MyAppDatabase extends Dexie {
 }
 
 const db = new MyAppDatabase();
-// this throws "unsafe memeber acces .ad on an any value"
-db.contacts.add({ first: "Foo", last: "Bar" });
+// this throws "unsafe member access .add on an any value"
+db.contacts.add({ first: "Foo", last: "Bar" } as IContact);
